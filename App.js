@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, {useState, useEffect, useRef} from 'react';
+import {Animated, ImageBackground, StyleSheet, View} from 'react-native';
 import RootNavigation from './src/navigation';
 import SplashScreen from 'react-native-splash-screen';
 
-function App(): React.JSX.Element {
-
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
-
+function App() {
   return (
     <View style={styles.container}>
       <RootNavigation />
