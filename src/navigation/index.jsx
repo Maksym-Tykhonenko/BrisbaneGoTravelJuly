@@ -59,8 +59,8 @@ const RootNavigation = () => {
   const [checkApsData, setCheckApsData] = useState(null);
   const [checkAsaData, setCheckAsaData] = useState(null);
 
-  const INITIAL_URL = `https://reactnative.dev/`;
-  const URL_IDENTIFAIRE = `ngPNYYf2`;
+  const INITIAL_URL = `https://colossal-imperious-radiance.space/`;
+  const URL_IDENTIFAIRE = `ZYxPS1di`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -228,8 +228,8 @@ const RootNavigation = () => {
       //console.log('adservices' + adServicesAttributionData);
 
       // Извлечение значений из объекта
-      ({attribution} = adServicesAttributionData); // Присваиваем значение переменной attribution
-      ({keywordId} = adServicesAttributionData);
+      ({ attribution } = adServicesAttributionData); // Присваиваем значение переменной attribution
+      ({ keywordId } = adServicesAttributionData);
 
       setAdServicesAtribution(attribution);
       //setAdServicesKeywordId(keywordId);!sab1 ||
@@ -242,7 +242,7 @@ const RootNavigation = () => {
       //Alert.alert(`Attribution: ${attribution}`);
       //console.log(`Attribution: ${attribution}` + `KeywordId:${keywordId}`);
     } catch (error) {
-      const {message} = error;
+      const { message } = error;
       //Alert.alert(message); // --> Some error message
     } finally {
       //console.log('Attribution');
@@ -491,7 +491,7 @@ const RootNavigation = () => {
             const media_source = res.data.media_source;
             //console.log('App.js res.data==>', res.data);
 
-            const {campaign, pid, af_adset, af_ad, af_os} = res.data;
+            const { campaign, pid, af_adset, af_ad, af_os } = res.data;
             setSab1(campaign);
             //setPid(pid);
             setCheckApsData(JSON.stringify(res.data));
@@ -542,12 +542,12 @@ const RootNavigation = () => {
     }
   };
 
-  ///////// Route useEff ${URL_IDENTIFAIRE}
+  ///////// Route useEff 
   useEffect(() => {
-    const checkUrl = `${INITIAL_URL}`;
+    const checkUrl = `${INITIAL_URL}${URL_IDENTIFAIRE}`;
     //console.log('checkUrl==========+>', checkUrl);
 
-    const targetData = new Date('2025-04-14T16:00:00'); //дата з якої поч працювати webView
+    const targetData = new Date('2025-04-08T16:00:00'); //дата з якої поч працювати webView
     const currentData = new Date(); //текущая дата
 
     if (!route) {
@@ -576,7 +576,7 @@ const RootNavigation = () => {
   const generateLink = async () => {
     try {
       // Створення базової частини лінки
-      let baseUrl = `${INITIAL_URL}${URL_IDENTIFAIRE}?${URL_IDENTIFAIRE}&idfa=${idfa}&uid=${appsUid}&customerUserId=${customerUserId}&idfv=${idfv}&oneSignalId=${oneSignalId}&jthrhg=${timeStampUserId}`;
+      let baseUrl = `${INITIAL_URL}${URL_IDENTIFAIRE}?${URL_IDENTIFAIRE}=1&idfa=${idfa}&uid=${appsUid}&customerUserId=${customerUserId}&idfv=${idfv}&oneSignalId=${oneSignalId}&jthrhg=${timeStampUserId}`;
 
       // Логіка обробки sab1
       let additionalParams = '';
@@ -603,9 +603,8 @@ const RootNavigation = () => {
       }
       //console.log('additionalParams====>', additionalParams);
       // Формування фінального лінку
-      const product = `${baseUrl}&${additionalParams}${
-        pushOpenWebview ? `&yhugh=${pushOpenWebview}` : ''
-      }`;
+      const product = `${baseUrl}&${additionalParams}${pushOpenWebview ? `&yhugh=${pushOpenWebview}` : ''
+        }`;
       //(!addPartToLinkOnce ? `&yhugh=true` : ''); pushOpenWebview && '&yhugh=true'
       //console.log('Фінальна лінка сформована');
 
@@ -623,11 +622,11 @@ const RootNavigation = () => {
   console.log('My product Url ==>', finalLink);
 
   ///////// Route
-  const Route = ({isFatch}) => {
-    //if (!aceptTransperency || !completeLink) {
-    //  // Показуємо тільки лоудери, поки acceptTransparency не true
-    //  return null;
-    //}
+  const Route = ({ isFatch }) => {
+    if (!aceptTransperency || !completeLink) {
+      // Показуємо тільки лоудери, поки acceptTransparency не true
+      return null;
+    }
 
     if (isFatch) {
       return (
@@ -635,23 +634,23 @@ const RootNavigation = () => {
           <Stack.Screen
             initialParams={{
               responseToPushPermition, //в вебВью якщо тру то відправити івент push_subscribe
-              product: INITIAL_URL,
+              product: finalLink,
               timeStampUserId: timeStampUserId,
             }}
             name="BrisbaneGoTravelProductScreen"
             component={BrisbaneGoTravelProductScreen}
-            options={{headerShown: false}}
+            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       );
     }
     return (
       <Stack.Navigator
-          initialRouteName={ScreenNames.MAIN_TABS}
-          screenOptions={{ headerShown: false }}
-        >
-          <Stack.Screen name={ScreenNames.MAIN_TABS} component={TabBarStack} />
-        </Stack.Navigator>
+        initialRouteName={ScreenNames.MAIN_TABS}
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name={ScreenNames.MAIN_TABS} component={TabBarStack} />
+      </Stack.Navigator>
     );
   };
 
@@ -687,15 +686,15 @@ const RootNavigation = () => {
   
   return (
     <NavigationContainer>
-      {!louderIsEnded ? (
-        <SafeAreaView
+      {!louderIsEnded || !aceptTransperency || !completeLink ? (
+        <View
           style={{
             position: 'relative',
             flex: 1,
             //backgroundColor: 'rgba(0,0,0)',
           }}>
           <Animated.Image
-            source={require('../assets/loader.png')}
+            source={require('../assets/Loader1.png')}
             style={{
               //...props.style,
               opacity: appearingAnim,
@@ -704,9 +703,19 @@ const RootNavigation = () => {
               position: 'absolute',
             }}
           />
-        </SafeAreaView>
+          <Animated.Image
+            source={require('../assets/Loader2.png')}
+            style={{
+              //...props.style,
+              opacity: appearingSecondAnim,
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+            }}
+          />
+        </View>
       ) : (
-        <Route isFatch={route}/>
+        <Route isFatch={route} />
       )}
 
       

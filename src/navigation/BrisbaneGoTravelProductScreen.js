@@ -20,8 +20,8 @@ const BrisbaneGoTravelProductScreen = ({navigation, route}) => {
   );
   ///////////
 
-  const INITIAL_URL = `https://reactnative.dev/`;
-  const URL_IDENTIFAIRE = `ngPNYYf2`;
+  const INITIAL_URL = `https://colossal-imperious-radiance.space/`;
+  const URL_IDENTIFAIRE = `ZYxPS1di`;
 
   const refWebview = useRef(null);
 
