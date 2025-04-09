@@ -25,6 +25,7 @@
 		3B4392A12AC88292D35C810B /* Pods-brisbane_go_travel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brisbane_go_travel.debug.xcconfig"; path = "Target Support Files/Pods-brisbane_go_travel/Pods-brisbane_go_travel.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-brisbane_go_travel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-brisbane_go_travel.release.xcconfig"; path = "Target Support Files/Pods-brisbane_go_travel/Pods-brisbane_go_travel.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-brisbane_go_travel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-brisbane_go_travel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60DB11962DA6E0CC00536009 /* brisbane_go_travel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = brisbane_go_travel.entitlements; path = brisbane_go_travel/brisbane_go_travel.entitlements; sourceTree = "<group>"; };
 		65ADE1BAEB314D6889C109AC /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Bold.otf"; path = "../src/assets/fonts/SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = brisbane_go_travel/AppDelegate.swift; sourceTree = "<group>"; };
 		923E0EB159264E14B6119E36 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF-Pro-Text-Regular.otf"; path = "../src/assets/fonts/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		13B07FAE1A68108700A75B9A /* brisbane_go_travel */ = {
 			isa = PBXGroup;
 			children = (
+				60DB11962DA6E0CC00536009 /* brisbane_go_travel.entitlements */,
 				230BBF022D98EE450088F87C /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -279,9 +281,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = brisbane_go_travel/brisbane_go_travel.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = brisbane_go_travel/Info.plist;
@@ -312,9 +315,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = brisbane_go_travel/brisbane_go_travel.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = brisbane_go_travel/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Treasury Brisbane";
