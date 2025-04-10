@@ -1,4 +1,4 @@
-import { FlatList, ScrollView, StyleSheet, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, View, } from 'react-native';
 import { SharedCard, SharedText } from './shared';
 import { PlaceCategories } from '../types/placeCategories';
 import placeData from '../assets/data/placeData';
@@ -12,7 +12,8 @@ const PlacesList = () => {
   }));
 
   return (
-    <ScrollView contentContainerStyle={styles.list}>
+    
+      <ScrollView contentContainerStyle={styles.list}>
       {groupedPlaces.map(group => (
         group.data.length > 0 && (
           <View key={group.title} style={styles.categorySection}>
@@ -32,6 +33,7 @@ const PlacesList = () => {
         )
       ))}
     </ScrollView>
+    
   );
 };
 

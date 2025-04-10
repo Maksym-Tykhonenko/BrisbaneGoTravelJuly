@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import {Animated, ImageBackground, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import RootNavigation from './src/navigation';
 import SplashScreen from 'react-native-splash-screen';
 

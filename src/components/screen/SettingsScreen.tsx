@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View,ImageBackground } from 'react-native';
 import { CardsList, SharedLayout } from '../shared';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -8,7 +8,11 @@ const SettingsScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<SettingsStackType>>();
 
   return (
-    <SharedLayout
+    <View style={{flex:1}}>
+          <ImageBackground
+            style={{ flex: 1 }}
+        source={require('../../assets/Background.png')}>
+        <SharedLayout
       isBtn
       title="Settings"
       btnText="Stats"
@@ -18,6 +22,9 @@ const SettingsScreen = () => {
         <CardsList />
       </View>
     </SharedLayout>
+      </ImageBackground>
+      </View>
+    
   );
 };
 

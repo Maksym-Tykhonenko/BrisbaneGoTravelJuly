@@ -284,7 +284,7 @@
 				CODE_SIGN_ENTITLEMENTS = brisbane_go_travel/brisbane_go_travel.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = brisbane_go_travel/Info.plist;
@@ -318,7 +318,7 @@
 				CODE_SIGN_ENTITLEMENTS = brisbane_go_travel/brisbane_go_travel.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = brisbane_go_travel/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Treasury Brisbane";

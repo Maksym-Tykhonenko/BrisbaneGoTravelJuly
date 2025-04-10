@@ -1,4 +1,4 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity} from 'react-native';
 import ISettings from '../types/settings';
 import React from 'react';
 import { SettingsStackType } from '../navigation/types';
@@ -16,26 +16,28 @@ const SettingsCard: React.FC<ISettingsCard> = ({ item }) => {
   const navigation = useNavigation<NativeStackNavigationProp<SettingsStackType>>();
 
   return (
-    <TouchableOpacity
-      onPress={() => {
-        if (link) {
-          navigation.navigate(link as keyof SettingsStackType);
-        }
-      }}
-      style={styles.container}
-    >
-      {icon && (() => {
-          const IconComponent = icon;
-          return <IconComponent />;
-        })()}
-      <SharedText settings text={title} />
-    </TouchableOpacity>
+   
+        <TouchableOpacity
+          onPress={() => {
+            if (link) {
+              navigation.navigate(link as keyof SettingsStackType);
+            }
+          }}
+          style={styles.container}
+        >
+          {icon && (() => {
+            const IconComponent = icon;
+            return <IconComponent />;
+          })()}
+          <SharedText settings text={title} />
+        </TouchableOpacity>
+      
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    //backgroundColor: colors.white,
     borderRadius: 12,
     paddingHorizontal: 16,
     paddingVertical: 18,
